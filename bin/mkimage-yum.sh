@@ -70,10 +70,10 @@ name=$1
 [[ -z "${name}" ]] && usage
 
 # yum -c "${yum_config}" grouplist --hidden
-# yum -c "${yum_config}" groupinfo Core Base "Java Platform"
+# yum -c "${yum_config}" grouplist --ids
+# yum -c "${yum_config}" groupinfo Base Core "Development Tools" "Java Platform"
 # yum -c "${yum_config}" search curl
 # yum -c "${yum_config}" search gzip
-# yum -c "${yum_config}" search jq
 # yum -c "${yum_config}" search *kernel*
 # yum -c "${yum_config}" search wget
 # yum -c "${yum_config}" search tar
@@ -180,7 +180,8 @@ rm -rf "${target}"/usr/share/i18n
 rm  -rf "${target}"/var/lib/rpm/*
 
 # yum cache
-rm -rf "${target}"/var/cache/yum
+# rm -rf "${target}"/var/cache/yum
+rm -rf "${target}"/var/cache/{dnf,yum}
 mkdir -p --mode=0755 "${target}"/var/cache/yum
 
 # yum repos
