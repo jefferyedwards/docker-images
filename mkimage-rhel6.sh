@@ -4,7 +4,10 @@
 ##
 set -e
 
-RHEL6_ISO="/path/to/rhel6/iso/file"
+##
+##  Path to RHEL6 ISO file
+##
+RHEL6_ISO="/home/jeff/share/rhel-server-6.10-x86_64-dvd.iso"
 
 ##
 ## Mount the RHEL 6 ISO
