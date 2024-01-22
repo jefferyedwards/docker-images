@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/opt/eclipse/eclipse "$@" >/tmp/eclipse-$(date +%s).log 2>&1 &
